@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @model IEnumerable<Proyecto3_Diplomado_Web_MVC_UASD_Registro.Models.Coche>
+    <h2>Listado de Vehiculos</h2>
+    <div>
+        @{
+            var grid = new WebGrid(Model, defaultSort: "Marca");
+        }
+
+        @grid.GetHtml(columns: grid.Columns(
+            grid.Column("Tipo", header: "Tipo"),
+            grid.Column("Marca", header: "Marca"),
+            grid.Column("Modelo", header: "Modelo"),
+            grid.Column("Color", header: "Color")
+        ));
+    </div>
+</body>
+</html>
